@@ -1,3 +1,6 @@
+import math
+
+
 class MoneyMachine:
 
     CURRENCY = "£"
@@ -31,22 +34,22 @@ class MoneyMachine:
 
     def calculate_change(self, change):
 
-        fifties = round(change / 0.5)
+        fifties = math.floor(change / 0.5)
         change -= fifties * 0.5
 
-        twenties = round(change / 0.2)
+        twenties = math.floor(change / 0.2)
         change -= twenties * 0.2
 
-        tens = round(change / 0.1)
+        tens = math.floor(change / 0.1)
         change -= tens * 0.1
 
-        fives = round(change / 0.05)
+        fives = math.floor(change / 0.05)
         change -= fives * 0.05
 
-        twos = round(change / 0.02)
+        twos = math.floor(change / 0.02)
         change -= twos * 0.02
 
-        ones = round(change / 0.01)
+        ones = math.floor(change / 0.01)
         change -= ones * 0.01
 
         print(f"Your change contains {fifties} 50p coins, {twenties} 20p coins, {tens} 10p coins, {fives} 5p coins, {twos} 2p coins and {ones} 1p coins\n  ")
